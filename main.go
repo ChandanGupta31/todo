@@ -58,7 +58,7 @@ func main() {
 	r := mux.NewRouter()
 
 	// handling routes
-	r.HandleFunc("/health", healthHandler).Methods(http.MethodGet)
+	r.HandleFunc("/", healthHandler).Methods(http.MethodGet)
 	r.HandleFunc("/todo", todoServices.CreateTodo).Methods(http.MethodPost)
 	r.HandleFunc("/todo/{id}", todoServices.UpdateTodo).Methods(http.MethodPut)
 	r.HandleFunc("/todo/{id}", todoServices.DeleteTodo).Methods(http.MethodDelete)
